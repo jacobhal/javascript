@@ -1,0 +1,1 @@
+var test = prompt('What\'s your age?'); // Like alert() but with user input
