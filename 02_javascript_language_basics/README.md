@@ -1,4 +1,4 @@
-# Section 1: JavaScript Language Basics
+# Section 2: JavaScript Language Basics
 * JavaScript can be used both client-side and server-side.
 * Libraries like React, Angular and jQuery are 100% based on JavaScript.
 

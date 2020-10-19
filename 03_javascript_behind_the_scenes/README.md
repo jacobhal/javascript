@@ -1,4 +1,4 @@
-# Section 2: JavaScript Behind the Scenes
+# Section 3: JavaScript Behind the Scenes
 
 ## How Our Code is Executed
 JavaScript is always executed in an environment, typically in browsers.
