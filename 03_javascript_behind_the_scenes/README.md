@@ -98,11 +98,11 @@ The execution stack for the code example below would look like this when we are 
 
 
 | Execution Stack |
-------------
-| third()  |
-| second() | 
-| first()  |
-| Global   |
+------------------
+| third()         |
+| second()        | 
+| first()         |
+| Global          |
 
 As functions finish, their contexts gets removed.
 
