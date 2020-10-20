@@ -35,6 +35,8 @@ function Person() {
 var p = new Person();
 ```
 
+> In our example above, the arrow function does not have its own this. The this value of the enclosing lexical scope is used; arrow functions follow the normal variable lookup rules. So while searching for this which is not present in the current scope, an arrow function ends up finding the this from its enclosing scope
+
 ### Basic Arrow functions
 An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
 
