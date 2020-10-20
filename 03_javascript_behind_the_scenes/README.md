@@ -96,13 +96,11 @@ Contexts are placed on top of each other in an Execution Stack.
 
 The execution stack for the code example below would look like this when we are inside the third function:
 
-
-| Execution Stack |
-------------------
-| third()         |
-| second()        | 
-| first()         |
-| Global          |
+Execution Stack
+* third()
+* second()
+* first()
+* Global
 
 As functions finish, their contexts gets removed.
 
