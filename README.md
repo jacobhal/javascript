@@ -6,6 +6,17 @@ Use `console.log({<variable-name>})` all the time in order to know what you are 
 ## Function definitions
 Use `function printName({firstName, lastName, middleName}){}` with brackets around the parameters in order to create a function that destructures the object you send in automatically. In this way, the order of the parameters does not matter.
 
+### Basic Arrow Functions
+An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+
+Differences & Limitations:
+
+* Does not have its own bindings to this or super, and should not be used as methods.
+* Does not have arguments, or new.target keywords.
+* Not suitable for call, apply and bind methods, which generally rely on establishing a scope.
+* Can not be used as constructors.
+* Can not use yield, within its body.
+
 ## Array methods
 Array methods like splice changes the array in all places. Instead, assign a new array with `const arr2 = [...arr]`.
 
