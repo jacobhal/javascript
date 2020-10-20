@@ -6,6 +6,34 @@ Use `console.log({<variable-name>})` all the time in order to know what you are 
 ## Function definitions
 Use `function printName({firstName, lastName, middleName}){}` with brackets around the parameters in order to create a function that destructures the object you send in automatically. In this way, the order of the parameters does not matter.
 
+### Normal Functions
+Inside a function, the value of this depends on how the function is called.
+
+Since the following code is not in strict mode, and because the value of this is not set by the call, this will default to the global object, which is window in a browser.
+
+```JSX
+function f1() {
+  return this;
+}
+
+// In a browser:
+f1() === window; // true
+
+// In Node:
+f1() === globalThis; // true
+```
+
+In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined, as shown in the following example:
+
+```JSX
+function f2() {
+  'use strict'; // see strict mode
+  return this;
+}
+
+f2() === undefined; // true
+```
+
 ### Basic Arrow Functions
 An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
 
