@@ -6,35 +6,36 @@ Use `console.log({<variable-name>})` all the time in order to know what you are 
 ## Function definitions
 Use `function printName({firstName, lastName, middleName}){}` with brackets around the parameters in order to create a function that destructures the object you send in automatically. In this way, the order of the parameters does not matter.
 
-### Normal Functions
-Inside a function, the value of this depends on how the function is called.
-
-Since the following code is not in strict mode, and because the value of this is not set by the call, this will default to the global object, which is window in a browser.
+### Traditional functions
+Traditional functions default this to the window scope:
 
 ```JSX
-function f1() {
-  return this;
+window.age = 10; // <-- notice me?
+function Person() {
+  this.age = 42; // <-- notice me?
+  setTimeout(function () { // <-- Traditional function is executing on the window scope
+    console.log("this.age", this.age); // yields "10" because the function executes on the window scope
+  }, 100);
 }
 
-// In a browser:
-f1() === window; // true
-
-// In Node:
-f1() === globalThis; // true
+var p = new Person();
 ```
 
-In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined, as shown in the following example:
+Arrow functions do not default this to the window scope, rather they execute in the scope they are created:
 
 ```JSX
-function f2() {
-  'use strict'; // see strict mode
-  return this;
+window.age = 10; // <-- notice me?
+function Person() {
+  this.age = 42; // <-- notice me?
+  setTimeout(() => { // <-- Arrow function executing in the "p" (an instance of Person) scope
+    console.log("this.age", this.age); // yields "42" because the function executes on the Person scope
+  }, 100);
 }
 
-f2() === undefined; // true
+var p = new Person();
 ```
 
-### Basic Arrow Functions
+### Basic Arrow functions
 An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
 
 Differences & Limitations:
