@@ -6,6 +6,50 @@ Use `console.log({<variable-name>})` all the time in order to know what you are 
 ## Function definitions
 Use `function printName({firstName, lastName, middleName}){}` with brackets around the parameters in order to create a function that destructures the object you send in automatically. In this way, the order of the parameters does not matter.
 
+### Traditional functions
+Traditional functions default this to the window scope:
+
+```JSX
+window.age = 10; // <-- notice me?
+function Person() {
+  this.age = 42; // <-- notice me?
+  setTimeout(function () { // <-- Traditional function is executing on the window scope
+    console.log("this.age", this.age); // yields "10" because the function executes on the window scope
+  }, 100);
+}
+
+var p = new Person();
+```
+
+Arrow functions do not default this to the window scope, rather they execute in the scope they are created:
+
+```JSX
+window.age = 10; // <-- notice me?
+function Person() {
+  this.age = 42; // <-- notice me?
+  setTimeout(() => { // <-- Arrow function executing in the "p" (an instance of Person) scope
+    console.log("this.age", this.age); // yields "42" because the function executes on the Person scope
+  }, 100);
+}
+
+var p = new Person();
+```
+
+> In our example above, the arrow function does not have its own this. The this value of the enclosing lexical scope is used; arrow functions follow the normal variable lookup rules. So while searching for this which is not present in the current scope, an arrow function ends up finding the this from its enclosing scope
+
+No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function. In other words, the arrow function resolves this lexically. In another words, the arrow function doesn’t define its own execution context.
+
+### Basic Arrow functions
+An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+
+Differences & Limitations:
+
+* Does not have its own bindings to this or super, and should not be used as methods.
+* Does not have arguments, or new.target keywords.
+* Not suitable for call, apply and bind methods, which generally rely on establishing a scope.
+* Can not be used as constructors.
+* Can not use yield, within its body.
+
 ## Array methods
 Array methods like splice changes the array in all places. Instead, assign a new array with `const arr2 = [...arr]`.
 

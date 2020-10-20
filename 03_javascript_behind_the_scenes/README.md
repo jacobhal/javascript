@@ -46,7 +46,7 @@ JavaScript scoping works as follows:
 * In JavaScript, each new function creates a scope in which the variables it defines are accessible.
 * Lexical scoping: a function that is lexically within another function gets access to the scope of the outer function.
 
-![Image not found](https://github.com/jacobhal/javascript-course/tree/master/03_javascript_behind_the_scenes/execution-stack-vs-scope-chain.png)
+![Image not found](https://github.com/jacobhal/javascript/blob/master/03_javascript_behind_the_scenes/execution-stack-vs-scope-chain.png)
 
 #### The 'this' keyword
 The this variable is a variable that each and every execution context gets and it is stored in the execution context object. 
@@ -96,13 +96,11 @@ Contexts are placed on top of each other in an Execution Stack.
 
 The execution stack for the code example below would look like this when we are inside the third function:
 
-
-| Execution Stack |
-------------
-| third()  |
-| second() | 
-| first()  |
-| Global   |
+Execution Stack
+* third()
+* second()
+* first()
+* Global
 
 As functions finish, their contexts gets removed.
 
