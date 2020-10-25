@@ -1,4 +1,4 @@
-# Section 3: DOM Manipulation and Events
+# Section 4: DOM Manipulation and Events
 
 ## DOM Manipulation
 Interacting with a webpage's content through JavaScript is called DOM manipulation.  
