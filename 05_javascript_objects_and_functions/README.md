@@ -97,6 +97,32 @@ Tips and tricks on instances of objects:
 > `console.info(<variable-name>)` can be used to check the full object definition for variables. You will notice that data structures like arrays also has prototypes defined in order to give us access to the generic functions/properties that are already available on arrays: length, splice, indexOf etc.
 
 ### Creating Objects: Object.create
+With Object.create we first define an Object which will act as the prototype and then call the create method from it in order to create a new object.
+
+Object.create is useful for creating more complex inheritance structures.
+
+In the code example below, we see some ways to use Object.create:
+
+```JSX
+var personProto = {
+    calculateAge: function() {
+        console.log(2016 - this.yearOfBirth);
+    }
+};
+
+var john = Object.create(personProto);
+john.name = 'John';
+john.yearOfBirth = 1990;
+john.job = 'teacher';
+
+var jane = Object.create(personProto, {
+    name: { value: 'Jane' },
+    yearOfBirth: { value: 1969 },
+    job: { value: 'designer' }
+});
+```
+
+> The difference between Object.create and Function constructors is that Object.create inherits directly from the object passed as the first argument while the newly created object from Function constructors inherits from the prototype property.
 
 ### Primitives vs Objects
 
