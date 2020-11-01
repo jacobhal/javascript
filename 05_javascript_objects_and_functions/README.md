@@ -1,5 +1,24 @@
 # Section 5: Objects and Functions
 
+Table of Contents
+=================
+
+   * [Section 5: Objects and Functions](#section-5-objects-and-functions)
+      * [Primitives and Objects](#primitives-and-objects)
+      * [Inheritance](#inheritance)
+         * [Prototypes](#prototypes)
+            * [Summary](#summary)
+      * [Coding with Objects and Functions](#coding-with-objects-and-functions)
+         * [Function Constructors](#function-constructors)
+         * [Prototypes in the console](#prototypes-in-the-console)
+         * [Creating Objects: Object.create](#creating-objects-objectcreate)
+         * [Primitives vs Objects](#primitives-vs-objects)
+         * [First Class Functions: Passing Functions as Arguments](#first-class-functions-passing-functions-as-arguments)
+         * [First Class Functions: Functions Returning Functions](#first-class-functions-functions-returning-functions)
+         * [Immediately Invoked Function Expressions (IIFE)](#immediately-invoked-function-expressions-iife)
+         * [Closures](#closures)
+         * [Bind, Call and Apply](#bind-call-and-apply)
+
 ## Primitives and Objects
 In JavaScript we have two types of values, primitives and objects.
 
