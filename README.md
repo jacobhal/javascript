@@ -42,6 +42,15 @@ No matter how or where being executed, this value inside of an arrow function al
 ### Basic Arrow functions
 An *arrow function* expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
 
+```JSX
+const calcAge = birthYear => 2037 - birthYear;
+const yearsUntilRetirement = (birthYear, name) =>  {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age; 
+    return `${name} retires in ${retirement} years`;
+}
+```
+
 Differences & Limitations:
 
 * Does not have its own bindings to this or super, and should not be used as methods.
