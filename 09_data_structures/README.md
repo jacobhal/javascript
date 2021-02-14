@@ -124,7 +124,7 @@ for (const day of days) {
 }
 ```
 
-# Object methods
+## Object methods
 
 ```JSx
 Object.keys(obj) // returns an array of keys.
@@ -132,7 +132,7 @@ Object.values(obj) // returns an array of values.
 Object.entries(obj) // returns an array of [key, value] pairs.
 ```
 
-# Sets
+## Sets
 
 ```JSX
 const ordersSet = new Set([
@@ -158,9 +158,9 @@ const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffUnique = [...new Set(staff)];
 ```
 
-# Maps
+## Maps
 
-## Fundamentals
+### Fundamentals
 
 ```JSX
 const rest = new Map();
@@ -195,7 +195,7 @@ console.log(rest.size);
 console.log(rest.get(arr));
 ```
 
-## Iteration
+### Iteration
 
 ```JSX
 const question = new Map([
